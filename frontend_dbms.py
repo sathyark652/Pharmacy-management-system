@@ -13,7 +13,7 @@ def insert():
     if(id=="" or fname==""  or lname==""or gender =="" or dob=="" or phone =="" or address==""):
         Messagebox.showinfo("insert status","all fields are required")
     else:
-        con=mysql.connect(host="localhost",user="",password="",database="pharmacy_ms")
+        con=mysql.connect(host="localhost",user="",password="",database="pharmacy_ms")#note : add your user name and password in the required fields
         cursor=con.cursor()
         cursor.execute("insert into customer values(' "+ id +" ' ,' "+ fname +" ',' "+ lname +" ',' "+ gender +" ',' "+ dob +" ',' "+ phone +" ',' "+ address +" ')")
         cursor.execute("commit");

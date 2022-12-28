@@ -13,7 +13,7 @@ def insert():
     if(id=="" or fname==""  or lname==""or gender =="" or dob=="" or phone =="" or address==""):
         Messagebox.showinfo("insert status","all fields are required")
     else:
-        con=mysql.connect(host="localhost",user="sathya",password="Sathya652",database="pharmacy_ms")
+        con=mysql.connect(host="localhost",user="",password="",database="pharmacy_ms")
         cursor=con.cursor()
         cursor.execute("insert into customer values(' "+ id +" ' ,' "+ fname +" ',' "+ lname +" ',' "+ gender +" ',' "+ dob +" ',' "+ phone +" ',' "+ address +" ')")
         cursor.execute("commit");
@@ -33,7 +33,7 @@ def delete():
     if(e_id.get()  ==  ""):
         Messagebox.showinfo("delete status","Id is mandatory for delete")
     else:
-        con = mysql.connect(host="localhost",user="sathya",password="Sathya652",database="pharmacy_ms")
+        con = mysql.connect(host="localhost",user="",password="",database="pharmacy_ms")
         cursor = con.cursor()
         cursor.execute("delete from customer  where cust_id= ' "+ e_id.get() +" ' ")
         cursor.execute("commit");
@@ -60,7 +60,7 @@ def update():
     if(id=="" or fname=="" ): 
         Messagebox.showinfo("update status","all fields are required")
     else:
-        con=mysql.connect(host="localhost",user="sathya",password="Sathya652",database="pharmacy_ms")
+        con=mysql.connect(host="localhost",user="",password="",database="pharmacy_ms")
         cursor=con.cursor()
         cursor.execute("update customer set fname=' "+ fname +" ' where cust_id=' "+id+" ' ")
         cursor.execute("commit");
@@ -79,7 +79,7 @@ def get():
     if(e_id.get() == ""):
         Messagebox.showinfo("fetch status","fetched succesfully");
     else:
-        con=mysql.connect(host="localhost",user="sathya",password="Sathya652",database="pharmacy_ms")
+        con=mysql.connect(host="localhost",user="",password="",database="pharmacy_ms")
         cursor=con.cursor()
         cursor.execute("select * from customer where cust_id = ' "+e_id.get()+" ' ")
         rows=cursor.fetchall()
@@ -95,7 +95,7 @@ def get():
         con.close();
 
 def show():
-     con=mysql.connect(host="localhost",user="sathya",password="Sathya652",database="pharmacy_ms")
+     con=mysql.connect(host="localhost",user="",password="",database="pharmacy_ms")
      cursor=con.cursor()
      cursor.execute("select * from customer")
      rows=cursor.fetchall()
